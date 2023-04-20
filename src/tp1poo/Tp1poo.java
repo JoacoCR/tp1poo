@@ -5,6 +5,9 @@
  */
 package tp1poo;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author Alumno
@@ -16,12 +19,31 @@ public class Tp1poo {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        app facebook = new app(10,"facebook");
+        app instagram = new app(10,"instagram");  
+        app twitter = new app(10,"twitter");
         
-        Celular samsung = new Celular(70,"samsung",20);
+        List<app> apps = new ArrayList<app>();
+        apps.add(twitter);
+        apps.add(instagram);
+        apps.add(facebook);
+        
+        Dueño Simon = new Dueño("Simon", "Gomez", 14);
+        
+        Celular samsung = new Celular(70,"samsung",20,apps,Simon);
+        
+        
         Celular xiaomi = new Celular(50,"xiaomni",19);
+        xiaomi.getApp().add(twitter);
+        
+        
+        
+        
         samsung.saludar();
         xiaomi.saludar();
+        
         samsung.suma();
+
     }
     
 }
